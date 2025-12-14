@@ -6,7 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-import fetch from "node-fetch";
 
 app.post("/send-sos", async (req, res) => {
   try {
@@ -78,3 +77,4 @@ ${location}`;
 app.listen(3000, () => {
   console.log("🚀 SOS backend running on port 3000");
 });
+
