@@ -12,6 +12,11 @@ const API_KEY = "jE2qDB6IKbJwNlhF4g8XzdSMmktHe5cPARZUv1a9pYuxyVLfCO3ZpfyDoQsBS97
 // 🔴 PUT YOUR PHONE NUMBER HERE (10 digits only)
 const CONTACT_NUMBERS = "8078416898";
 
+app.get("/", (req, res) => {
+  res.send("Backend is live ✅");
+});
+
+
 app.post("/send-sos", async (req, res) => {
   const { location } = req.body;
 
