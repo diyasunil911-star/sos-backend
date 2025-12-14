@@ -6,6 +6,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.post("/send-sos", async (req, res) => {
+  console.log("SOS endpoint hit");
+  res.json({ success: true });
+});
+
+
 // 🔴 PUT YOUR FAST2SMS API KEY HERE
 const API_KEY = "jE2qDB6IKbJwNlhF4g8XzdSMmktHe5cPARZUv1a9pYuxyVLfCO3ZpfyDoQsBS976MiceNm2IVlbUu5XK";
 
