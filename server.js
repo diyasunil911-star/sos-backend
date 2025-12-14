@@ -6,6 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+import fetch from "node-fetch";
 
 app.post("/send-sos", async (req, res) => {
   try {
@@ -17,14 +18,15 @@ app.post("/send-sos", async (req, res) => {
         "authorization": process.env.FAST2SMS_API_KEY,
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        route: "q",
-        message: `🚨 SOS ALERT!\nI need help.\nLocation: ${location}`,
-        language: "english",
-        flash: 0,
-        numbers: "8078416898"
-      })
-    });
+     body: JSON.stringify({
+  route: "q",
+  sender_id: "TXTIND",
+  message: `🚨 SOS ALERT!\nI need help.\nLocation: ${location}`,
+  language: "english",
+  flash: 0,
+  numbers: "8078416898"
+})
+    });s
 
     const data = await response.json();
     console.log("SMS Response:", data);
@@ -76,4 +78,3 @@ ${location}`;
 app.listen(3000, () => {
   console.log("🚀 SOS backend running on port 3000");
 });
-
